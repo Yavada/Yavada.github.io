@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>RS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="rs_main.css"/>
+</script>
+</head>
+
+
+<body>
+  <div id="spinner" style="display: none;">
+    <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
+
+  <h3>Stats</h3>
+
+  <dl>
+    <dt>Temperature</dt>
+    <dd id="tepr">&nbsp;</dd>
+    <dt>Min</dt>
+    <dd id="min">&nbsp;</dd>
+    <dt>Max</dt>
+    <dd id="max">&nbsp;</dd>
+    <dt>Relay State</dt>
+    <dd id="relay">&nbsp;</dd>
+  </dl>
+
+  <input type="number" name="min" min="20" max="40"/>
+  <input type="number" name="max" min="26" max="50"/>
+
+  <input type='button' name='set' value="Set">
+  <input type='button' name='get_tepr' value="Get Temperature">
+  <input type='button' name='get_min' value="Get Min">
+  <input type='button' name='get_max' value="Get Max">
+  <input type='button' name='get_relay' value="Get Relay">
+
+
+  <script src='rs_main.js'></script>
+</body>
+</html>
