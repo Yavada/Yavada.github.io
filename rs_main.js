@@ -20,7 +20,7 @@ let timers = {tepr: 0, min: 0, max: 0, relay: 0}
 function getUpdate(what) { return new Promise( async res => {
   spinnerEl.style.display = 'block'
   timers[what] = Date.now() / 1000
-  let resF = await fetch(`https://api.particle.io/v1/devices/430039001247343339383037/${what}?access_token=43e0888d3346b524646e2b5184ceec81a1428f4b`, {
+  let resF = await fetch(`https://api.particle.io/v1/devices/e00fce6852d017473ad49d7f/${what}?access_token=43e0888d3346b524646e2b5184ceec81a1428f4b`, {
     method: 'GET', 
     headers: {
       'Content-Type': 'application/json'
@@ -34,8 +34,8 @@ function getUpdate(what) { return new Promise( async res => {
 })}
 
 async function runUpdate() {
-  let min = minEl.value;
-  let max = maxEl.value;
+  let min = Number(minInputEl.value);
+  let max = Number(maxInputEl.value);
 
   if (min < 20 || min > 40 || min > max || max < 26 || max > 50 || max < min) {
     alert ("check the min and max. out of bounds")
@@ -44,7 +44,7 @@ async function runUpdate() {
 
   let data = { arg: `${min},${max}` }
 
-  let res = await fetch('https://api.particle.io/v1/devices/430039001247343339383037/funcy?access_token=43e0888d3346b524646e2b5184ceec81a1428f4b', {
+  let res = await fetch('https://api.particle.io/v1/devices/e00fce6852d017473ad49d7f/rs_saveconfigs?access_token=43e0888d3346b524646e2b5184ceec81a1428f4b', {
     method: 'POST', 
     headers: {
       'Content-Type': 'application/json'
@@ -54,7 +54,9 @@ async function runUpdate() {
 
   let dataBack = await res.json()
   
-  if(dataBack.return_value != 1)
+  if(dataBack.return_value === 1)
+    alert ("Saved")
+  else
     alert ("Unable to contact server")
 }
 
