@@ -37,7 +37,7 @@ async function runUpdate() {
   let min = Number(minInputEl.value);
   let max = Number(maxInputEl.value);
 
-  if (min < 20 || min > 40 || min > max || max < 26 || max > 50 || max < min) {
+  if (min < -60 || min > 158 || min > max || max < -58 || max > 160 || max < min) {
     alert ("check the min and max. out of bounds")
     return
   }
