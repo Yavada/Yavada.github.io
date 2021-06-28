@@ -44,7 +44,7 @@ async function runUpdate() {
 
   let data = { arg: `${min},${max}` }
 
-  let res = await fetch('https://api.particle.io/v1/devices/e00fce6852d017473ad49d7f/rs_saveconfigs?access_token=43e0888d3346b524646e2b5184ceec81a1428f4b', {
+  let res = await fetch('https://api.particle.io/v1/devices/e00fce6852d017473ad49d7f/rs_saveconfigs?access_token=7ca6a2f0aa013c6504f369dc1cb7cf44ef531359', {
     method: 'POST', 
     headers: {
       'Content-Type': 'application/json'
