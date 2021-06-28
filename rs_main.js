@@ -20,7 +20,7 @@ let timers = {tepr: 0, min: 0, max: 0, relay: 0}
 function getUpdate(what) { return new Promise( async res => {
   spinnerEl.style.display = 'block'
   timers[what] = Date.now() / 1000
-  let resF = await fetch(`https://api.particle.io/v1/devices/e00fce6852d017473ad49d7f/${what}?access_token=43e0888d3346b524646e2b5184ceec81a1428f4b`, {
+  let resF = await fetch(`https://api.particle.io/v1/devices/e00fce6852d017473ad49d7f/${what}?access_token=7ca6a2f0aa013c6504f369dc1cb7cf44ef531359`, {
     method: 'GET', 
     headers: {
       'Content-Type': 'application/json'
