@@ -6,7 +6,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const round = Number(urlParams.get("round"))
         
-        const urlpost = round === 1 ? "/#upgrade_2" : (round === 2 ? "/#upgrade_3" : "")
+        const urlpost = round === 1 ? "/#update_2" : (round === 2 ? "/#update_3" : "")
         
         if (document.referrer.includes("localhost")) {
           window.location.href = "http://localhost:3003"+urlpost;          
