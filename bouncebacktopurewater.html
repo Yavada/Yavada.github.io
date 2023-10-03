@@ -5,12 +5,12 @@
         
         const urlParams = new URLSearchParams(window.location.search);
         const round = Number(urlParams.get("round"))
+        const backto = urlParams.get("backto")
         
         const urlpost = round === 1 ? "/index.html?update=2" : (round === 2 ? "/index.html?update=3" : "")
-        alert ("document.referrer");
-          alert (document.referrer);
-        if (document.referrer.includes("localhost")) {
+        
           
+        if (backto === "localhost") {
           window.location.href = "https://localhost:3003"+urlpost;          
         } else { 
           window.location.href = "https://purewatertech.appspot.com"+urlpost;
